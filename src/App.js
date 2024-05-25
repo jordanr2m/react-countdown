@@ -1,9 +1,12 @@
 import './App.css';
+import Product from './components/product/Product';
+import Countdown from './components/countdown/Countdown';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <Countdown />
+      <Product />
     </div>
   );
 }
