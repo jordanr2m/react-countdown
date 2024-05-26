@@ -1,0 +1,52 @@
+.countdown-section {
+    width: 100%;
+    background-color: yellow;
+    /* allows us to position close icon */
+    position: relative;
+}
+
+.container h2 {
+    margin-bottom: 0;
+}
+
+.countdown {
+    background-color: var(--color-purple);
+    padding: 1rem;
+}
+
+.countdown time span {
+    margin: 0 1rem;
+}
+
+time span p {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+time span small {
+    font-size: 1.2rem;
+    font-weight: 200;
+    background-color: orangered;
+    padding: 0 3px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.close {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 5px;
+    right: 7px;
+    color: red;
+    border: 2px solid red;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    cursor: pointer;
+    /* Position x in center of circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
