@@ -18,7 +18,7 @@ const Product = () => {
       </header>
 
       <section>
-        <div className='container product --flex-center --dir-column'>
+        <div className='container product --flex-center --flex-dir-column'>
           <div className='product-image --text-center --card --mr'>
             <img src={gown} alt='wedding dress'/>
           </div>

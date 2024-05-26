@@ -2,3 +2,16 @@
     margin-bottom: -5px;
     margin-left: 3px;
 }
+
+.product-image,
+.product-description {
+    flex: 1;
+}
+
+.product-image img {
+    width: 100%;
+}
+
+.product-description {
+    margin-left: 1rem;
+}
