@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import "./Countdown.css";
 
-const Countdown = () => {
+  // Pass a prop for closing the countdown timer
+const Countdown = ({ onHideCountdown }) => {
   const [days, setDays] = useState("00");
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
+  // State to store if the countdown has ended or not
+  const [countdownEnded, setCountdownEnded] = useState(false);
 
   const startCountdown = () => {
     // Use setInterval method
@@ -24,7 +27,9 @@ const Countdown = () => {
 
       // Logic for what we want it to do (when countdown is finished is written first)
       if (totalSeconds < 1) {
-        // do something
+        setCountdownEnded(true);
+        // use clearInterval method to stop the countdown (interval var)
+        clearInterval(interval);
       } else {
         // Use backticks to plug in our format function to our counts
         setDays(`${format(daysCount)}`);
@@ -43,12 +48,13 @@ const Countdown = () => {
   // Must use the useEffect hook to call the function
   useEffect(() => {
     startCountdown()
-  }, []); // set an empty dependency so it fires just once
+  }); // set an empty dependency so it fires just once. VSCode said to remove empty dependence array, so I did. Countdown still works and error is now gone
 
   return (
     <div className='countdown-section'>
       <div className='container --flex-between'>
-        <h2 className='--text-md'>Christmas Sale!</h2>
+        {/* If countdown has not ended, show Christmas Sale */}
+        <h2 className='--text-md'>{!countdownEnded ? "Christmas Sale!" : "Sale Ended"}</h2>
 
         <div className='countdown --card --my'>
           <time className='--flex-center --text-center --color-white'>
@@ -75,7 +81,8 @@ const Countdown = () => {
         </div>
       </div>
 
-      <p className='close'>X</p>
+      {/* Pass in the onHideCountdown prop as the onClick function */}
+      <p className='close' onClick={onHideCountdown}>X</p>
     </div>
   )
 }

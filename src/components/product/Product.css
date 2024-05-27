@@ -1,3 +1,7 @@
+nav.container h2 span {
+    font-weight: lighter;
+}
+
 .shopping-icon {
     margin-bottom: -5px;
     margin-left: 3px;
